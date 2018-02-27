@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Game {
@@ -28,20 +29,24 @@ public class Game {
      * @param guess
      * @param random
      */
-    public static void checkGuess(String guess, String random){
-
+    public static int[] checkGuess(String guess, String random){
+        int[] results = new int[4];
         for(int i = 0; i < guess.length(); i++){
 
             if(guess.charAt(i) == random.charAt(i)){
+                results[i] = 0;
                 System.out.println("BULLEYE!");
             }
             else if (random.indexOf(guess.charAt(i))!=-1){
+                results[i] = 1;
                 System.out.println("its there but not spot on try again");
             }
             else{
+                results[i] = 2;
                 System.out.println("does not exist");
             }
         }
+        return results;
     }
 
     /**

@@ -14,7 +14,7 @@ public class Main {
                     guess = JOptionPane.showInputDialog("Please make sure your guess is only 4 different digits long");
                 }
 
-                Game.checkGuess(guess, Game.generateRandomNumber());
+                int[] res = Game.checkGuess(guess, Game.generateRandomNumber());
                 proceed = JOptionPane.showConfirmDialog(null,"Would you like to try again?",
                         "Next round?",JOptionPane.YES_NO_OPTION);
             }
